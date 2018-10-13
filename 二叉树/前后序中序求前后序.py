@@ -50,15 +50,24 @@ if __name__ == '__main__':
     preorder = [0, 1, 3, 7, 8, 4, 9, 2, 5, 6]
     inorder = [7, 3, 8, 1, 9, 4, 0, 5, 2, 6]
     postorder = [7, 8, 3, 9, 4, 1, 5, 6, 2, 0]
-    r_preorder = []
-    r_postorder = []
+    rebuildList = []
 
-    rebuilder(preorder, inorder, r_postorder)
-    print(r_postorder)
+    rebuilder(preorder, inorder, rebuildList)
+    print(rebuildList)
 
     # rebuildpreorder(preorder, inorder, r_postorder)
     # print(r_postorder)
     # rebuildpostorder(r_preorder, inorder, postorder)
     # print(r_preorder)
 
-
+"""
+前后序中序求前后序
+4个参数, 前后序, 中序, 重建, 下标=0
+if len=0
+if len=1
+从前后序拿出根
+从中序拿出下标
+递归前部分
+递归后部分
+append(求后序写递归后)
+"""

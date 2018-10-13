@@ -34,12 +34,12 @@ class Tree:
                     queue.append(cur.lchild)
                     queue.append(cur.rchild)
 
-    def breadth_travel(self, root):
+    def breadth_travel(self, node):
         """利用队列实现树的层次遍历"""
-        if root is None: # 没有根节点的情况
+        if node is None: # 没有根节点的情况
             return
         queue = deque()
-        queue.append(root)
+        queue.append(node)
         while queue:
             cur = queue.popleft()
             print(cur.elem, end=' ')

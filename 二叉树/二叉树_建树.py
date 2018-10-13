@@ -43,7 +43,7 @@ class Tree:
         queue.append(self.root)
         while queue:
             node = queue.popleft()
-            print(node.elem)
+            print(node.elem, end='\t')
             if node.lchild is not None:
                 queue.append(node.lchild)
             if node.rchild is not None:
