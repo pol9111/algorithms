@@ -9,7 +9,7 @@ def heap_sort(arr):
     # 将最大的放到堆的最后一个, 堆-1, 继续调整排序
     for end in range(len(arr) -1, 0, -1):
         arr[0], arr[end] = arr[end], arr[0]
-        sift(arr, 0, end - 1)
+        sift(arr, 0, end - 1) # end-1, 每次建好堆之后堆顶的弹出, 例如第一次最后一个下标跟第一个换了, 之后sift范围就是0到end-1
 
 
 

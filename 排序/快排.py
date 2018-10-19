@@ -37,13 +37,13 @@ def quicksort(lst):
 
 data = list(range(100))
 random.shuffle(data)
-
+print(data)
 
 quick_sort(data, 0, len(data) - 1)
 print(data)
 
-# rst = quicksort(data)
-# print(rst)
+rst = quicksort(data)
+print(rst)
 
 
 """

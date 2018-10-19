@@ -49,6 +49,15 @@ class SingLinkList:
         node.next = self.head # 加一个node, 新的next指向整个久链表
         self.head = node # 名称在换回来
 
+    def search(self, elem):
+        """链表查找节点是否存在"""
+        cur = self.head
+        while cur is not None:
+            if cur.elem == elem:
+                return True
+            cur = cur.next
+        return False
+
     def insert(self, pos, elem):
         """指定位置添加"""
         if pos <= 0:
@@ -64,16 +73,6 @@ class SingLinkList:
                 pre = pre.next # 保存当前节点
             node.next = pre.next # 先将新节点node的next指向插入位置后面的节点
             pre.next = node  # 将插入位置的前一个节点的next指向新节点
-
-
-    def search(self, elem):
-        """链表查找节点是否存在"""
-        cur = self.head
-        while cur is not None:
-            if cur.elem == elem:
-                return True
-            cur = cur.next
-        return False
 
     def remove(self, elem):
         """删除节点"""
@@ -107,7 +106,7 @@ if __name__ == '__main__':
     s = SingLinkList()
     # print(s.is_empty())
     # print(s.length())
-    for i in range(0,2):
+    for i in range(0,8):
         s.append(i)
     # print(s.search(8))
     # s.travel()
@@ -115,7 +114,7 @@ if __name__ == '__main__':
     # s.add(0)
     # s.insert(8, 8)
     # s.travel()
-    # s.remove(0)
+    # s.remove(7)
     # s.travel()
     rev(s)
     s.travel()
