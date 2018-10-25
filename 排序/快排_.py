@@ -25,14 +25,13 @@ def sift(lst, left, right):
 
 def quicksort(lst):
     """较快的快排"""
-    if len(lst) < 2:
+    if len(lst) <= 1:
         return lst
-    else:
-        midpivot = lst[0]
-        lessbeforemidpivot = [i for i in lst[1:] if i<=midpivot]
-        biggerafterpivot = [i for i in lst[1:] if i > midpivot]
-        finallylist = quicksort(lessbeforemidpivot)+[midpivot]+quicksort(biggerafterpivot)
-        return finallylist
+    midpivot = lst[0]
+    lessbeforemidpivot = [i for i in lst[1:] if i<=midpivot]
+    biggerafterpivot = [i for i in lst[1:] if i > midpivot]
+    finallylist = quicksort(lessbeforemidpivot)+[midpivot]+quicksort(biggerafterpivot)
+    return finallylist
 
 
 data = list(range(100))
