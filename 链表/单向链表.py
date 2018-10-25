@@ -68,7 +68,7 @@ class SingLinkList:
             node = Node(elem)
             count = 0
             pre = self.head
-            while count < pos-1: # 到指定位置的前一个停止, 指定位置是给新的节点的
+            while count < pos-1: # 到指定位置的前一个停止(<), 指定位置是给新的节点的, pre = pre.next(pos-1)
                 count += 1
                 pre = pre.next # 保存当前节点
             node.next = pre.next # 先将新节点node的next指向插入位置后面的节点
@@ -77,8 +77,8 @@ class SingLinkList:
     def remove(self, elem):
         """删除节点"""
         cur = self.head
-        # if cur.next is None and cur.elem == elem: # 只有一个的
-        #     cur.elem = None
+        if not cur:
+            return
         if cur.elem == elem: # 有两个
             self.head = cur.next
         else:
@@ -91,6 +91,8 @@ class SingLinkList:
 
 
 def rev(link):
+    if not self.head:
+        return
     pre = link.head # 保存当前节点
     cur = link.head.next # 指向下一个节点
     pre.next = None # 当前节点next等于上一个节点
