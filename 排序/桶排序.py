@@ -4,7 +4,7 @@ import random
 def bucket_sort(arr):
     buckets = [0] * ((max(arr) - min(arr)) + 1)  # 初始化桶元素为0
     for i in range(len(arr)):
-        buckets[arr[i] - min(arr)] += 1  # 遍历数组a，在桶的相应位置(arr[i] - min(arr))累加值
+        buckets[arr[i] - min(arr)] += 1  # 遍历数组a，在桶的相应位置累加值, (arr[i] - min(arr))当前值-最小值(距离)=当前值桶的位置
     rst = []    # 当前值-最小值即=桶位置
     for j in range(len(buckets)): # 遍历桶, 拿出并放到新的列表, 升序
     # for i in range(len(buckets)-1, -1, -1): # 降序
